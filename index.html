@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Text Extractor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.1/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js" integrity="sha512-ml/QKfG3+Yes6TwOzQb7aCNtJF4PUyha6R3w8pSTo/VJSywl7ZreYvvtUso7fKevpsI+pYVVwnu82YO0q3V6eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PDF To Data converter</h1>
+    <div class="pdfwork">
+        <button class="another" onclick="location.reload()">Extract Another PDF</button>
+        <span>Select PDF</span>
+        <input type="file" class="selectpdf">
+        <span>Password :</span>
+        <input type="password" class="pwd" placeholder='optional'>
+        <button class="upload">Upload</button>
+        <div class="afterupload">
+            <span>Select Page</span>
+            <select class="selectpage" onchange="afterProcess()"></select>
+            <a href="" class="download" download>Download Pdf Text</a>
+            <textarea class="pdftext"></textarea>
+        </div>
+    </div>
+<div id="Main">
+<div id="NewInfo">
+    <table id="results-table">
+      <thead>
+          <tr>
+              <th>Full Name</th>
+              <th>Roll Number</th>
+              <th>Course</th>
+              <th>semester</th>
+              <th> branch</th>
+              <th>passStatus</th>
+              <th>CGPA</th>
+              <th>SGPA</th>
+          </tr>
+      </thead>
+      <tbody>
+      </tbody>
+  </table>
+  <div id="End">
+      <p>Total Pass: <span id="pass-count">0</span></p>
+      <p>Total Fail: <span id="fail-count">0</span></p>
+  </div>
+</div>
+<button onclick="downloadPDF()" id="download">Download PDF</button>
+<button onclick="exportTableToExcel()" id="download">Download PDF</button>
+
+</div>
+<script src="index.js"></script>
+	</body>
+</html>
+
